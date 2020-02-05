@@ -9,12 +9,13 @@ sudo apt-get install postgresql
 sudo apt-get install python-psycopg2
 sudo apt-get install libpq-dev
 
-# create database
-# follow instruction given in this url:
-
-# https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04
-
-# mind to give names of db and user exact like in python code
+# create database in psql shell
+CREATE DATABASE checkerDB;
+CREATE USER checkerUser WITH PASSWORD 'password';
+ALTER ROLE checkerUser SET client_encoding TO 'utf8';
+ALTER ROLE checkerUser SET default_transaction_isolation TO 'read committed';
+ALTER ROLE checkerUser SET timezone TO 'UTC';
+GRANT ALL PRIVILEGES ON DATABASE checkerDB TO checkerUser;
 
 # ----------------------------
 
