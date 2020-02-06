@@ -10,6 +10,8 @@ sudo apt-get install python-psycopg2
 sudo apt-get install libpq-dev
 
 # create database in psql shell
+sudo -i -u postgres # switch user
+psql  # enter shell
 CREATE DATABASE checkerDB;
 CREATE USER checkerUser WITH PASSWORD 'password';
 ALTER ROLE checkerUser SET client_encoding TO 'utf8';
@@ -23,7 +25,7 @@ pip3 install -r requirements.txt
 
 # run migrations in app root directory
 
-python3 manage.py runmigrations
+python3 manage.py migrate
 ```
 
 
