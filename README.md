@@ -2,6 +2,21 @@
 
 
 
+### Dockerized app (current state)
+
+```bash
+docker-compose up
+
+# get into app container and run migrations
+docker exec -it algochecker_web_1 bash
+python3 manage.py migrate
+
+# create superuser
+python3 manage.py createsuperuser
+```
+
+
+
 ### Pre-docker app requirements for Ubuntu
 
 ```bash
