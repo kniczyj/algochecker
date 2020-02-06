@@ -2,7 +2,7 @@
 
 
 
-### Pre-docker requirements for Ubuntu
+### Pre-docker app requirements for Ubuntu
 
 ```bash
 sudo apt-get install postgresql
@@ -17,9 +17,13 @@ ALTER ROLE checkerUser SET default_transaction_isolation TO 'read committed';
 ALTER ROLE checkerUser SET timezone TO 'UTC';
 GRANT ALL PRIVILEGES ON DATABASE checkerDB TO checkerUser;
 
-# ----------------------------
+# if no venv create it. Then install requiremets
 
 pip3 install -r requirements.txt
+
+# run migrations in app root directory
+
+python3 manage.py runmigrations
 ```
 
 
