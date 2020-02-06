@@ -5,12 +5,12 @@ services:
     image: postgres:11
     ports:
       - "5431:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
     environment:
       - POSTGRES_DB=checkerdb
       - POSTGRES_USER=checkeruser
       - POSTGRES_PASSWORD=password
+    volumes:
+      - data:/var/lib/postgresql/data/
   web:
     build: .
     command: python3 manage.py runserver 0.0.0.0:8000
@@ -21,4 +21,4 @@ services:
     depends_on:
       - db
 volumes:
-  postgres_data:
+  data:
