@@ -16,7 +16,7 @@ class InputFile(models.Model):
     # m:1 with Exercise
     exercise = models.ForeignKey(Exercise, null=False,
                                  on_delete=models.CASCADE)  # When a Case is deleted, upload models are also deleted
-    file = models.FileField(null=True, blank=True)
+    file = models.FileField(null=True, blank=True, upload_to=f'uploads/')
 
     def __str__(self):
         return f"Input for exercise '{self.exercise.exercise_name}'"
@@ -26,7 +26,7 @@ class OutputFile(models.Model):
     # m:1 with Exercise
     exercise = models.ForeignKey(Exercise, null=False,
                                  on_delete=models.CASCADE)  # When a Case is deleted, upload models are also deleted
-    file = models.FileField(null=True, blank=True)
+    file = models.FileField(null=True, blank=True, upload_to=f'uploads/')
 
     def __str__(self):
         return f"Output for exercise '{self.exercise.exercise_name}'"
