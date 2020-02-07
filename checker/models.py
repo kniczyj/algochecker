@@ -14,19 +14,19 @@ class Exercise(models.Model):
 
 class InputFile(models.Model):
     # m:1 with Exercise
-    input = models.ForeignKey(Exercise, null=False,
-                              on_delete=models.CASCADE)  # When a Case is deleted, upload models are also deleted
+    exercise = models.ForeignKey(Exercise, null=False,
+                                 on_delete=models.CASCADE)  # When a Case is deleted, upload models are also deleted
     file = models.FileField(null=True, blank=True)
 
     def __str__(self):
-        return f"Input for exercise '{self.input.exercise_name}'"
+        return f"Input for exercise '{self.exercise.exercise_name}'"
 
 
 class OutputFile(models.Model):
     # m:1 with Exercise
-    input = models.ForeignKey(Exercise, null=False,
-                              on_delete=models.CASCADE)  # When a Case is deleted, upload models are also deleted
+    exercise = models.ForeignKey(Exercise, null=False,
+                                 on_delete=models.CASCADE)  # When a Case is deleted, upload models are also deleted
     file = models.FileField(null=True, blank=True)
 
     def __str__(self):
-        return f"Output for exercise '{self.input.exercise_name}'"
+        return f"Output for exercise '{self.exercise.exercise_name}'"
