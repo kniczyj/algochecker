@@ -45,3 +45,57 @@ python3 manage.py migrate
 
 
 
+### Planner directory structure
+
+
+
+.
+├── **algochecker**
+│   ├── asgi.py
+│   ├── init.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── checker
+│   ├── admin.py
+│   ├── apps.py
+│   ├── init.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_auto_20200207_1353.py
+│   │   ├── init.py
+│   │   └── pycache
+│   │       ├── 0001_initial.cpython-37.pyc
+│   │       └── __init__.cpython-37.pyc
+│   ├── models.py
+│   ├── pycache
+│   │   ├── admin.cpython-37.pyc
+│   │   ├── apps.cpython-37.pyc
+│   │   ├── init.cpython-37.pyc
+│   │   ├── models.cpython-37.pyc
+│   │   ├── urls.cpython-37.pyc
+│   │   └── views.cpython-37.pyc
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── **common_resources**
+│   └── img
+├── **compilation_runner**
+│   ├── Dockerfile
+│   └── src
+├── docker-compose.yml
+├── Dockerfile
+├── **judge**
+│   ├── Dockerfile
+│   └── src
+├── manage.py
+├── media
+│   └── uploads
+│       ├── in
+│       └── out
+├── README.md
+├── requirements.txt
+├── templates
+└── venv
+    ├── bin
+    │...
